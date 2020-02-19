@@ -11,7 +11,7 @@ toc: true
 # LPC55S69配置
 LPC55S69是一款基于ARM内核的双核MCU， 由两个Cortex-M33构成。其最高运行频率为100MHz。
 
-![LPC55S69 EVK](/markdown_img/lpc55s69 USB test/lpc55s69 overview.jpg)  
+![LPC55S69 EVK](lpc55s69_overview.jpg)  
 
 整个工程的准备工作如下：
 1. 选用CPU0作为默认的控制核心
@@ -43,7 +43,7 @@ tmp_buf为buffer地址，buf_len是需要传送的数据长度
 
 8MB/s的速率对于HS USB来说是明显偏低的。通过调整整个工程的优化等级，可以提高速率。将优化等级调整至-O1或者以上，USB的速率可以达到21MB/s，无传输错误发生。
 
-![测试结果](/markdown_img/lpc55s69 USB test/SDK test.png)
+![测试结果](SDK_test.png)
 
 此外，如果MCU的时钟频率降低，USB的传输速率也会相应降低，通过USB分析仪观察后，可以发现是NAK的数量变多。
 
@@ -51,7 +51,7 @@ tmp_buf为buffer地址，buf_len是需要传送的数据长度
 虽然最后通过增长buf_len，以及调整优化等级，可以使得高速USB口的速率在21MB/s左右。但是对于最高速率480Mbps的Hi-Speed USB来说，速率上还是有所欠缺。
 
 采用USB分析仪进行抓包分析
-![抓包分析](/markdown_img/lpc55s69 USB test/packet1.png)
+![抓包分析](packet1.png)
 
 可以发现在进行数据传输的时候，USB发送了过多的NAK。测试中的USB传输，其发送NAK与发送有效数据的时间基本相同，可以做如下简单计算：  
 
