@@ -2,6 +2,7 @@
 title: Transaction and Concurrency Control
 date: 2020-11-13
 categories: [Database]
+toc: true
 ---
 
 ## Transaction
