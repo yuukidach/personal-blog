@@ -93,3 +93,7 @@ disqus_shortname: yuuki-dachs-blog
 search:
   path: search.xml
   field: post
+
+toc:
+  anchor:
+    symbol: '##'
