@@ -69,7 +69,6 @@ plugin:
 - hexo-generator-feed 
 - hexo-generator-sitemap
 - hexo-generator-baidu-sitemap
-# - hexo-math
 - hexo-renderer-mathjax
 
 ## Themes: https://hexo.io/themes/
