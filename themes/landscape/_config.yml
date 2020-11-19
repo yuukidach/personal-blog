@@ -9,12 +9,15 @@ rss: /atom.xml
 excerpt_link: Read More
 fancybox: true
 
+# Enable Mathjax
+mathjax: true
+
 # Sidebar
 sidebar: right
 widgets:
 - category
 - archive
-- tag
+# - tag
 - tagcloud
 - recent_posts
 - links
