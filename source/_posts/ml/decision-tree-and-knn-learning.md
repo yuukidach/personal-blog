@@ -135,3 +135,65 @@ We can also use distance weighted nearest neighbor algorithm:
 $$
 \hat{f} \gets \frac{\sum_{i=1}^{k}{w_if(x^{(i)})}}{\sum_{i=1}^{k}{w_i}}, \ \text {where} \ w_i = \frac{1}{d(x^{(q)}, x^{(i)})^2}
 $$
+
+## Evaluation Classification
+
+1\. Evaluation Metrics
+
+![Evaluation Metrics](evaluation_matrix.png)
+
+$$
+Accuracy = \frac{a+d}{a+b+c+d} \\
+Precision = \frac{d}{b+d} \\
+Sensitivity = Recall = \frac{d}{c+d} \\
+Specificity = \frac{a}{a+b} \\
+(False\ Positive\ Rate = 1 - Specificity)
+$$
+
+2\. Area Under ROC Curve (AUC)
+
+![AUC](auc.png)
+
+- Cutoff is the threshold a classification model uses to split between 2 classes.
+- As the cutoff decreases, more and more cases are classified as 1; hence, the sensitivity increases and speificity decreases.
+- As the ROC curvebows above the diagonal, the predictive power increases. Curve 1 is better than curve 2
+
+## Issues in Decision Tree Learning
+
+1\. Features with many unique values
+
+**Problem:** *Gain* tends to select features with many unique values to clssify instance.
+
+**Solution:** Adjust *Gain* to *GainRatio*
+
+$$
+SplitInfomation(S,A) \equiv -\sum_{i=1}^{c}\frac{|S_i|}{|S|}\log_2{\frac{|S_i|}{|S|}} \\
+GainRatio(S,A) = \frac{Gain(S,A)}{SplitInfomation(S,A)} 
+$$
+
+$ S $ is the set of all records in a prarent node. $ S_i $ is a subset of records that have feature $ A_i $
+
+When should Gain Ratio be used in place of Gain?
+
+- Compute both Gain Ratio and Gain for each feature
+- Use Gain Ratio only for features with above-average Gain
+
+2\. Overfitting
+
+Ways to avoid overfitting:
+
+- Stop growing tree when data split is not statistically significant.
+- Grow full tree then post-prune.
+
+Selecting best tree:
+
+- Measure performance over taining data
+- Measure performance over seperate validation datases
+- Add penalty against complexity
+
+3\. Unknown feature values
+
+Strategies to impute missing values of feature A:
+
+- Use most common value of A in all instances having missing value for A
+- Within each group of instances having same target value, assign most common value of A to instances
