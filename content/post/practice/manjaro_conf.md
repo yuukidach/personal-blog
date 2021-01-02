@@ -24,6 +24,7 @@ This post is about how I configure my Manjaro i3
 12. vim (with [vimplus](https://github.com/chxuan/vimplus))
 13. flameshot (screen capture tool)
 14. nerd-fonts-jetbrains-mono (font for vscode)
+15. ncdu (Simple ncurses disk usage analyzer)
 
 ## Multiple Monitors
 
