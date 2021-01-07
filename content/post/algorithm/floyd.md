@@ -2,6 +2,7 @@
 title: "Floyd-Warshall 算法"
 date: 2021-01-07T20:44:45+08:00
 draft: False
+categories: [Learning, Algorithm]
 ---
 
 **弗洛伊德算法（Floyd-Warshall algorithm)** 是解决两点间最短路径的一种算法。时间复杂度$O(N^{3})$，空间复杂度$O(N^{2})$。
